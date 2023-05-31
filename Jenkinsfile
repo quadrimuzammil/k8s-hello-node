@@ -43,7 +43,7 @@ withDockerRegistry(credentialsId: 'ecr:ap-south-1:aws_credentials_for_ecr', url:
         stage('Deploy to Eks'){
             steps{
                     dir("kubernetes") { 
-                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f deployment.yml"
                                   }
                  }
                               }
