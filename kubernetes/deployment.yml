@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: "k8s-hello-node"
-          image: "033385524530.dkr.ecr.ap-south-1.amazonaws.com/backend-demo:latest"
+          image: "033385524530.dkr.ecr.ap-south-1.amazonaws.com/backend-demo:Latest"
           resources:
             requests:
               memory: "64Mi"
