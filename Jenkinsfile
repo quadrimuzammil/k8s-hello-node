@@ -21,9 +21,9 @@ pipeline {
         
     stage('Build_docker_image') {
             steps {
-            dir("backend") {
+            
                 sh 'docker build -t 033385524530.dkr.ecr.ap-south-1.amazonaws.com/backend-demo:Latest . '
-                           }
+                           
                   }
                                 }    
   stage('Push_Imgae_ECR') {
