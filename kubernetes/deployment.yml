@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: "k8s-hello-node"
-          image: "033385524530.dkr.ecr.ap-south-1.amazonaws.com/backend-demo"
+          image: "033385524530.dkr.ecr.ap-south-1.amazonaws.com/backend-demo:latest"
           resources:
             requests:
               memory: "64Mi"
@@ -28,4 +28,18 @@ spec:
               cpu: "500m"
 
 ---
-
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "k8s-node-service"
+  namespace: "default"
+  labels:
+    app: "k8s-node"
+spec:
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 3000
+  selector:
+    app: "k8s-node"
+  type: "LoadBalancer"
